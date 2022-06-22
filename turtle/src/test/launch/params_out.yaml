@@ -1,0 +1,15 @@
+bg_B: 200
+bg_G: 40
+bg_R: 100
+myturtle1: {background_b: 255, background_g: 86, background_r: 69, bg_B: 200, bg_G: 40,
+  bg_R: 100, param_B: 3.14}
+param_A: 100
+rosdistro: 'melodic
+
+  '
+roslaunch:
+  uris: {host_wb__36407: 'http://wb:36407/', host_wb__45365: 'http://wb:45365/', host_wb__46153: 'http://wb:46153/'}
+rosversion: '1.14.12
+
+  '
+run_id: aae644dc-7fe4-11ec-b65e-b0359f05c91d

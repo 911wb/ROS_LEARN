@@ -1,0 +1,7 @@
+
+
+rosbag record -a -o ./follow.bag
+
+rosbag info follow_2022-01-30-21-11-37.bag 
+
+rosbag play follow_2022-01-30-21-11-37.bag

@@ -1,0 +1,14 @@
+<!-- 当两个节点话题不一致时：-->
+<!-- 方法一：rosrun teleop_twist_keyboard teleop_twist_keyboard.py /cmd_vel:=turtle1/cmd_vel -->
+<!-- 方法二：rosrun turtlesim turtlesim_node /turtle1/cmd_vel:=cmd_vel -->
+
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="t1">
+        <remap from="/turtle1/cmd_vel" to="/cmd_vel" />
+    </node>
+
+    
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="key" />
+
+
+</launch>

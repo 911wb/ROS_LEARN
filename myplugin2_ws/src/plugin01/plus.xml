@@ -1,0 +1,14 @@
+<!-- step6 a.使插件可用于ROS工具链:配置xml -->
+<!-- 根标签 需要定位动态链接库-->
+<library path="lib/libplus">
+
+    <!-- 声明子类和父类 -->
+    <!-- 正三边形插件 -->
+    <class type="polygon_plugins_ns::sanbian" base_class_type="polygon_base_ns::polygon_base">
+    </class>
+
+     <!-- 正四边形插件 -->
+    <class type="polygon_plugins_ns::sibian" base_class_type="polygon_base_ns::polygon_base">
+    </class>
+
+</library>

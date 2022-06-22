@@ -1,0 +1,16 @@
+<launch>
+    <!-- 在参数服务器载入 urdf文件 -->
+    <param name="robot_description" textfile="$(find urdf01_rviz)/urdf/myurdf/base_footprint.urdf" />
+    <!-- 启动rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf01_rviz)/config/show_mycar.rviz" />
+
+    <!-- 
+        camera到base_link的坐标变换：ros提供了关于机器人模型显示的坐标发布相关节点 
+            rosrun joint_state_publisher : 关节状态发布节点
+            rosrun robot_state_publisher ： 机器人状态发布节点
+    -->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot" />
+
+</launch>

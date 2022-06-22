@@ -1,0 +1,20 @@
+
+<!-- 集成导航相关的launch文件 -->
+<launch>
+    <!-- 并且加载前面建立好的地图-->
+    <include file="$(find slam)/launch/nav03_gmap_load.launch"/>    
+
+    <!-- 启动AMCL节点：进行定位 -->
+    <include file="$(find slam)/launch/nav04_amcl.launch" />
+
+    <!-- 运行move_base节点 -->
+    <include file="$(find slam)/launch/nav05_path.launch" />
+
+    <!-- rviz显示机器人模型所需 -->
+    <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher" />
+    <!-- 雷达坐标系 到 基坐标系 -->
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" />
+    <!-- 运行rviz  -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam)/rviz/test_nav.rviz" />
+
+</launch>

@@ -1,0 +1,5 @@
+<!-- 需要复用start_turtle.launch -->
+<launch>
+    <!-- 包含 -->
+    <include file="$(find test)/launch/start_turtle.launch" />
+</launch>

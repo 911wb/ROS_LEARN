@@ -1,0 +1,15 @@
+<!-- 需要启动多个乌龟GUI节点 -->
+<launch>
+    <!-- 正常 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="myturtle" />
+    <!-- 重命名 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="t1" />
+    <node pkg="turtlesim" type="turtlesim_node" name="t2" />
+
+    <!-- 名称空间无法通过键盘控制 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="myturtle" ns="ergouzi" />
+	<!-- 键盘控制 -->
+    <node pkg="turtlesim" type="turtle_teleop_key" name="key" output="screen"/>
+
+</launch>
+

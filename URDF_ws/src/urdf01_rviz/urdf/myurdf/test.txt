@@ -1,0 +1,4 @@
+sudo apt install liburdfdom-tools
+check_urdf test.urdf
+urdf_to_graphiz test.urdf
+evince mycar.pdf

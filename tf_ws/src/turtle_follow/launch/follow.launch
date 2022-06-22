@@ -1,0 +1,30 @@
+<launch>
+    <!-- 1.启动乌龟GUI节点 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turtle1" output="screen" />
+    <!-- 键盘控制节点发布位姿T -->
+    <node pkg="turtlesim" type="turtle_teleop_key" name="key" output="screen" />
+    
+    
+    <!-- 2.生成新的乌龟节点 -->
+    <!-- 节点类型就是进程名称 -->
+    <node pkg="turtle_follow" type="new_turtle" name="turtle2" output="screen" />
+
+
+
+    <!-- 3.发布两个乌龟在世界坐标系的位姿
+        实现思路
+            1.只写一个节点(进程):pub_turtle.cpp
+            2.这个节点启动两次，传入不同的参数
+            3.节点启动时动态传参：
+    -->
+
+    <!-- 接收并发布乌龟1的在世界坐标系下位姿 T_wc1-->
+    <node pkg="turtle_follow" type="pub_turtle" name="pub1" args="turtle1" output="screen" />
+    <!-- 接收并发布乌龟2的在世界坐标系下位姿 T_wc2-->
+    <node pkg="turtle_follow" type="pub_turtle" name="pub2" args="turtle2" output="screen" />
+
+    <!-- 4.订阅 T_wc1 、T_wc2，并转换成 T_c1c2， 再生成速度消息-->
+    <node pkg="turtle_follow" type="control_turtle2" name="control" output="screen" />
+
+
+</launch>

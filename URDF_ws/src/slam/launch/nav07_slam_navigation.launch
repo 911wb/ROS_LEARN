@@ -1,0 +1,13 @@
+<!-- 集成slam与导航 -->
+
+<launch>
+    <!-- 启动SLAM节点：实时定位与建图，这时候不需要amcl来定位 -->
+    <include file="$(find slam)/launch/nav01_gmapping.launch" />
+
+    <!-- 运行导航中的move_base节点 -->
+    <include file="$(find slam)/launch/nav05_path.launch" />
+
+    <!-- 运行rviz  -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam)/rviz/slam_navigation.rviz"/>
+
+</launch>

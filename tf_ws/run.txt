@@ -1,0 +1,33 @@
+1.rosmsg info geometry_msgs/PointStamped
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id # 坐标点按照哪个坐标系作为参考
+geometry_msgs/Point point
+  float64 x
+  float64 y
+  float64 z
+
+
+rosmsg info geometry_msgs/TransformStamped
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id 被参考的坐标系
+string child_frame_id 另外一个坐标系
+geometry_msgs/Transform transform
+  geometry_msgs/Vector3 translation
+    float64 x
+    float64 y
+    float64 z
+  geometry_msgs/Quaternion rotation
+    float64 x
+    float64 y
+    float64 z
+    float64 w
+
+
+
+
+pdf:
+/ROS/tf_ws$ rosrun tf2_tools view_frames.py

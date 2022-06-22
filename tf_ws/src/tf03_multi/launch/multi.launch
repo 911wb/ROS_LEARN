@@ -1,0 +1,9 @@
+<launch>
+    <!-- 发布方 -->
+    <!-- args是son1转换到world的偏移量和欧拉角 绕z 绕y 绕x-->
+    <!-- T_1w -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="son1" args="5 0 0 0 0 0 /world /son1" output="screen" />
+    <!-- T_2w -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="son2" args="3 0 0 0 0 0 /world /son2" output="screen" />
+
+</launch>

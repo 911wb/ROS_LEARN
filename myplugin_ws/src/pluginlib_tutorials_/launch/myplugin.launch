@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="pluginlib_tutorials_" type="myplugin" name="myplugin" output="screen"/>
+   
+</launch>
